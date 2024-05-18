@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Los Salieris del Gato</title>
+    <meta name="description" content="Recetas de cocina.">
+    <meta name="author" content="CaC - Grupo 5">
+
+    <meta property="og:title" content="Los Salieris del Gato">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://apolo.dreamhosters.com/">
+    <meta property="og:description" content="Recetas de cocina.">
+    <meta property="og:image" content="./static/img/logos/png/los salieris del gato-02.png">
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" rel="stylesheet" type="text/css">
+    <link href="./static/styles/alertify.min.css" rel="stylesheet" type="text/css">
+    <link href="./static/styles/default.min.css" rel="stylesheet" type="text/css">
+    <link href="./static/styles/dynamic-select.css" rel="stylesheet" type="text/css">
+    <link href="./static/styles/main.css" rel="stylesheet" type="text/css">
+
+    <!-- ES6 -->
+    <script src="./static/js/slidr.min.js" type="text/javascript"></script>
+    <script src="./static/js/alertify.min.js"></script>
+    <script src="./static/js/dynamic-select.js" type="text/javascript"></script>
+    <script src="./static/js/nav.js" type="text/javascript"></script>
+    <script src="./static/js/ui.js" type="text/javascript"></script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar_container">
+        <!-- Logo -->
+        <div class="logo_content">
+            <div class="logo">
+                <i class="bx bxs-cat" animation="tada"></i>
+                <div class="logo_name">Los Salieris del Gato</div>
+            </div>
+            <i class="bx bx-menu" id="btn_menu"></i>
+        </div>
+        <!-- Menu -->
+        <ul class="nav_list">
+            <li>
+                <i class="bx bxs-search-alt-2" id="btn_search"></i>
+                <input type="text" name="search" id="search" onkeypress="search_handle_keypress(event)" placeholder="Buscar..." autocomplete="off">
+                <span class="tooltip">Buscar</span>
+            </li>
+            <li>
+                <a id="profile" href="javascript:void(0);" onclick="profile();" class='no-link'>
+                    <i class="bx bxs-user"></i>
+                    <span class="links_name">Usuario</span>
+                </a>
+                <span class="tooltip">Usuario</span>
+            </li>
+            <li>
+                <a href="#anchor_recipes_favourites">
+                    <i class="bx bxs-heart"></i>
+                    <span class="links_name">Favoritas</span>
+                </a>
+                <span class="tooltip">Favoritas</span>
+            </li>
+            <li>
+                <a id="messaging" href="javascript:void(0);" onclick="messaging();" class='no-link'>
+                    <i class="bx bxs-message-dots"></i>
+                    <span class="links_name">Mensajes</span>
+                </a>
+                <span class="tooltip">Mensajes</span>
+            </li>
+            <li>
+                <a href="#anchor_recipes_popular">
+                    <i class="bx bxs-bar-chart-alt-2"></i>
+                    <span class="links_name">Populares</span>
+                </a>
+                <span class="tooltip">Populares</span>
+            </li>
+            <li>
+                <a href="#anchor_recipes_all">
+                    <i class='bx bxs-pizza'></i>
+                    <span class="links_name">Recetario</span>
+                </a>
+                <span class="tooltip">Recetario</span>
+            </li>
+            <li>
+                <a href="#anchor_recipes_15min">
+                    <i class='bx bx-pie-chart'></i>
+                    <span class="links_name">15 minutos</span>
+                </a>
+                <span class="tooltip">15 minutos</span>
+            </li>
+            <li>
+                <a href="#anchor_recipes_30min">
+                    <i class='bx bx-adjust'></i>
+                    <span class="links_name">30 minutos</span>
+                </a>
+                <span class="tooltip">30 minutos</span>
+            </li>
+            <li>
+                <a href="#anchor_recipes_1hr">
+                    <i class='bx bx-circle'></i>
+                    <span class="links_name">60 minutos</span>
+                </a>
+                <span class="tooltip">60 minutos</span>
+            </li>
+            <li>
+                <a id="shopping-list" href="javascript:void(0);" onclick="shopping_list();" class='no-link'>
+                    <i class="bx bxs-cart-alt"></i>
+                    <span class="links_name">Compras</span>
+                </a>
+                <span class="tooltip">Compras</span>
+            </li>
+            <li>
+                <a href='https://cafecito.app/unfinited' rel='noopener' target='_blank'>
+                    <i class="bx bxs-coffee"></i>
+                    <span class="links_name">Donar</span>
+                </a>
+                <span class="tooltip">Donar</span>
+            </li>
+            <li>
+                <a id="settings" href="javascript:void(0);" onclick="settings();" class='no-link'>
+                    <i class="bx bxs-cog"></i>
+                    <span class="links_name">Configuración</span>
+                </a>
+                <span class="tooltip">Configuración</span>
+            </li>
+        </ul>
+        <!-- Profile -->
+        <div class="profile_content">
+            <div class="profile">
+                <div class="profile_details">
+                    <img src="./static/img/profile_photo_example.jpg" alt="Profile image.">
+                    <div class="name_suscription">
+                        <div class="name">Leandro Falanga</div>
+                        <div class="suscription">Estándar</div>
+                    </div>
+                </div>
+                <a id="logout" href="#" onclick="logout();" title="Salir" class='no-link'>
+                    <i class="bx bxs-log-out" id="log_out"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="home_content" id="home_content">
+        <header>
+            <div id="header_content" class="header_content">
+                <div class="header_logo">
+                    <div class="header_logo_img_container">
+                        <img src="./static/img/logos/svg/los salieris del gato-01.svg" alt="Logo del encabezado.">
+                    </div>
+                </div>
+                <div class="header_title">
+                    Los Salieris del Gato
+                </div>
+                <div id="header_menu" class="header_menu">
+                    <a href="#anchor_login">
+                        <i class='bx bxs-log-in'></i>
+                    </a>
+                    <a href="#anchor_register">
+                        <i class='bx bx-up-arrow-circle'></i>
+                    </a>
+                    <i class='bx bx-menu' id='btn_header_menu'></i>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="content_main">
+                <section class="welcome">
+                    <div class="welcome_container">
+                        <a href="#" id="anchor_welcom">
+                            <h2>Bienvenido</h2>
+                        </a>
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis beatae debitis soluta sint magni totam harum fuga, fugit a ab velit hic doloremque dolores aspernatur atque numquam et. Et, voluptas.
+                        </p>
+                    </div>
+                </section>
+                <hr>
+                <section class="about">
+                    <div class="about_container">
+                        <a href="#" id="anchor_about">
+                            <h2>Acerca nuestro</h2>
+                        </a>
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis beatae debitis soluta sint magni totam harum fuga, fugit a ab velit hic doloremque dolores aspernatur atque numquam et. Et, voluptas.
+                        </p>
+                    </div>
+                </section>
+                <hr>
+                <section class="main_register">
+                    <div class="form_container">
+                        <a href="#" id="anchor_register" class="no-link">
+                            <h2>Registrarse</h2>
+                        </a>
+                        <div class="standard_form_container">
+                            <!-- Register -->
+                            <form method="POST" onsubmit="return sign_up(event);">
+                                <div class="input_container">
+                                    <label for="register_first_name">Nombre:</label>
+                                    <input type="text" id="register_first_name" name="register_first_name" placeholder="Ej.: José" autocomplete="off">
+                                </div>
+                                <div class="input_container">
+                                    <label for="register_last_name">Apellido:</label>
+                                    <input type="text" id="register_last_name" name="register_last_name" placeholder="Ej.: Perez" autocomplete="off">
+                                </div>
+                                <div class="input_container">
+                                    <label for="register_email">Correo electrónico:</label>
+                                    <input type="email" id="register_email" name="register_email" placeholder="Ej.: jose.perez@gmail.com" autocomplete="off">
+                                </div>
+                                <div class="input_container">
+                                    <label for="register_confirm_email">Confirmar correo electrónico:</label>
+                                    <input type="email" id="register_confirm_email" name="register_confirm_email" placeholder="Ej.: jose.perez@gmail.com" autocomplete="off">
+                                </div>
+                                <div>
+                                    <label for="register_password">Contraseña:</label>
+                                    <input type="password" id="register_password" name="register_password" placeholder="Ingrese su contraseña..." autocomplete="off">
+                                </div>
+                                <div>
+                                    <label for="register_confirm_password">Confirmar contraseña:</label>
+                                    <input type="password" id="register_confirm_password" name="register_confirm_password" placeholder="Vuelva a ingresar su contraseña..." autocomplete="off">
+                                </div>
+                                <div class="checkbox_container">
+                                    <label class="form-control">
+                                        <input type="checkbox" id="register_accept_terms" name="register_accept_terms" class="fancy-checkbox">
+                                        Acepto términos y condiciones.
+                                    </label>
+                                    <label class="form-control">
+                                        <input type="checkbox" id="register_sucribe" name="register_sucribe" class="fancy-checkbox" checked>
+                                        Deseo suscribirme al newsletter.
+                                    </label>
+                                    <label class="form-control form-control--disabled">
+                                        <input type="checkbox" id="register_checkbox_disabled" name="register_checkbox_disabled" class="fancy-checkbox" disabled>
+                                        Quisiera me enviaran el VHS de She Hulk.
+                                    </label>
+                                    <label class="form-control form-control--disabled">
+                                        <input type="checkbox" id="register_checkbox_disabled_checked" name="register_checkbox_disabled_checked" class="fancy-checkbox" checked disabled>
+                                        Francia perdió la final del Mundial.
+                                    </label>
+                                </div>
+                                <button type="submit" class="btn_form" id="btn_register">Enviar</button>
+                            </form>
+                        </div>
+                        </form>
+                    </div>
+                </section>
+                <hr>
+                <section class="main_login">
+                    <div class="form_container">
+                        <a href="#" id="anchor_login" class="no-link">
+                            <h2>Ingreso</h2>
+                        </a>
+                        <div class="standard_form_container">
+                            <!-- Login -->
+                            <form method="POST" onsubmit="return log_in(event);">
+                                <div class="input_container">
+                                    <label for="login_email">Correo electrónico:</label>
+                                    <input type="email" id="login_email" name="login_email" placeholder="Ej.: jose.perez@gmail.com" autocomplete="off">
+                                </div>
+                                <div>
+                                    <label for="login_password">Contraseña:</label>
+                                    <input type="password" id="login_password" name="login_password" placeholder="Ingrese su contraseña..." autocomplete="off">
+                                </div>
+                                <button type="submit" class="btn_form" id="btn_login">Ingresar</button>
+                            </form>
+                        </div>
+                        </form>
+                    </div>
+                </section>
+                <hr>
+                <!-- All Recipes -->
+                <section class="section_recipes">
+                    <div class="recipes_all_container">
+                        <a href="#" id="anchor_recipes_all" class="no-link">
+                            <h2>Recetario completo</h2>
+                        </a>
+                        <div class="slidr_recipes_all_container">
+                            <div id="slidr_recipes_all_img">
+                                <img data-slidr="zero" src="./static/img/recipes/all.jpg">
+                                <img data-slidr="one" src="./static/img/recipes/plato-1.jpg">
+                                <img data-slidr="two" src="./static/img/recipes/plato-2.jpg">
+                                <img data-slidr="three" src="./static/img/recipes/plato-3.jpg">
+                                <img data-slidr="four" src="./static/img/recipes/plato-4.jpg">
+                                <img data-slidr="five" src="./static/img/recipes/plato-5.jpg">
+                                <img data-slidr="six" src="./static/img/recipes/plato-6.jpg">
+                                <img data-slidr="seven" src="./static/img/recipes/plato-7.jpg">
+                                <img data-slidr="eight" src="./static/img/recipes/plato-8.jpg">
+                                <img data-slidr="nine" src="./static/img/recipes/plato-9.jpg">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <hr>
+                <!-- 15min Recipes -->
+                <section class="recipes_15min">
+                    <div class="recipes_15min_container">
+                        <a href="#" id="anchor_recipes_15min">
+                            <h2>Cocinar en 15'</h2>
+                        </a>
+                        <div class="slidr_recipes_15min_container">
+                            <div id="slidr_recipes_15min_img">
+                                <img data-slidr="zero" src="./static/img/recipes/15min.jpg">
+                                <img data-slidr="one" src="./static/img/recipes/plato-1.jpg">
+                                <img data-slidr="two" src="./static/img/recipes/plato-2.jpg">
+                                <img data-slidr="three" src="./static/img/recipes/plato-3.jpg">
+                                <img data-slidr="four" src="./static/img/recipes/plato-4.jpg">
+                                <img data-slidr="five" src="./static/img/recipes/plato-5.jpg">
+                                <img data-slidr="six" src="./static/img/recipes/plato-6.jpg">
+                                <img data-slidr="seven" src="./static/img/recipes/plato-7.jpg">
+                                <img data-slidr="eight" src="./static/img/recipes/plato-8.jpg">
+                                <img data-slidr="nine" src="./static/img/recipes/plato-9.jpg">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <hr>
+                <!-- 30min Recipes -->
+                <section class="recipes_30min">
+                    <div class="recipes_30min_container">
+                        <a href="#" id="anchor_recipes_30min">
+                            <h2>Cocinar en 30'</h2>
+                        </a>
+                        <div class="slidr_recipes_30min_container">
+                            <div id="slidr_recipes_30min_img">
+                                <img data-slidr="zero" src="./static/img/recipes/30min.jpg">
+                                <img data-slidr="one" src="./static/img/recipes/plato-1.jpg">
+                                <img data-slidr="two" src="./static/img/recipes/plato-2.jpg">
+                                <img data-slidr="three" src="./static/img/recipes/plato-3.jpg">
+                                <img data-slidr="four" src="./static/img/recipes/plato-4.jpg">
+                                <img data-slidr="five" src="./static/img/recipes/plato-5.jpg">
+                                <img data-slidr="six" src="./static/img/recipes/plato-6.jpg">
+                                <img data-slidr="seven" src="./static/img/recipes/plato-7.jpg">
+                                <img data-slidr="eight" src="./static/img/recipes/plato-8.jpg">
+                                <img data-slidr="nine" src="./static/img/recipes/plato-9.jpg">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <hr>
+                <!-- 60min Recipes -->
+                <section class="recipes_1hr">
+                    <div class="recipes_1hr_container">
+                        <a href="#" id="anchor_recipes_1hr">
+                            <h2>Cocinar en 60'</h2>
+                        </a>
+                        <div class="slidr_recipes_1hr_container">
+                            <div id="slidr_recipes_1hr_img">
+                                <img data-slidr="zero" src="./static/img/recipes/60min.jpg">
+                                <img data-slidr="one" src="./static/img/recipes/plato-1.jpg">
+                                <img data-slidr="two" src="./static/img/recipes/plato-2.jpg">
+                                <img data-slidr="three" src="./static/img/recipes/plato-3.jpg">
+                                <img data-slidr="four" src="./static/img/recipes/plato-4.jpg">
+                                <img data-slidr="five" src="./static/img/recipes/plato-5.jpg">
+                                <img data-slidr="six" src="./static/img/recipes/plato-6.jpg">
+                                <img data-slidr="seven" src="./static/img/recipes/plato-7.jpg">
+                                <img data-slidr="eight" src="./static/img/recipes/plato-8.jpg">
+                                <img data-slidr="nine" src="./static/img/recipes/plato-9.jpg">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <hr>
+                <!-- Popular Recipes -->
+                <section class="recipes_popular">
+                    <div class="recipes_popular_container">
+                        <a href="#" id="anchor_recipes_popular">
+                            <h2>Recetas Populares</h2>
+                        </a>
+                        <div class="slidr_recipes_popular_container">
+                            <div id="slidr_recipes_popular_img">
+                                <img data-slidr="zero" src="./static/img/recipes/popular.jpg">
+                                <img data-slidr="one" src="./static/img/recipes/plato-1.jpg">
+                                <img data-slidr="two" src="./static/img/recipes/plato-2.jpg">
+                                <img data-slidr="three" src="./static/img/recipes/plato-3.jpg">
+                                <img data-slidr="four" src="./static/img/recipes/plato-4.jpg">
+                                <img data-slidr="five" src="./static/img/recipes/plato-5.jpg">
+                                <img data-slidr="six" src="./static/img/recipes/plato-6.jpg">
+                                <img data-slidr="seven" src="./static/img/recipes/plato-7.jpg">
+                                <img data-slidr="eight" src="./static/img/recipes/plato-8.jpg">
+                                <img data-slidr="nine" src="./static/img/recipes/plato-9.jpg">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <hr>
+                <!-- Favourite Recipes -->
+                <section class="recipes_favourites">
+                    <div class="recipes_favourites_container">
+                        <a href="#" id="anchor_recipes_favourites">
+                            <h2>Mis Recetas Favoritas</h2>
+                        </a>
+                        <div class="slidr_recipes_favourites_container">
+                            <div id="slidr_recipes_favourites_img">
+                                <img data-slidr="zero" src="./static/img/recipes/favourites.jpg">
+                                <img data-slidr="one" src="./static/img/recipes/plato-1.jpg">
+                                <img data-slidr="two" src="./static/img/recipes/plato-2.jpg">
+                                <img data-slidr="three" src="./static/img/recipes/plato-3.jpg">
+                                <img data-slidr="four" src="./static/img/recipes/plato-4.jpg">
+                                <img data-slidr="five" src="./static/img/recipes/plato-5.jpg">
+                                <img data-slidr="six" src="./static/img/recipes/plato-6.jpg">
+                                <img data-slidr="seven" src="./static/img/recipes/plato-7.jpg">
+                                <img data-slidr="eight" src="./static/img/recipes/plato-8.jpg">
+                                <img data-slidr="nine" src="./static/img/recipes/plato-9.jpg">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <hr>
+                <section class="main_contact">
+                    <div class="form_container">
+                        <a href="#" id="anchor_contact">
+                            <h2>Contáctenos</h2>
+                        </a>
+                        <div class="standard_form_container">
+                            <!-- Register -->
+                            <form method="POST" onsubmit="return contact(event);">
+                                <div class="input_container">
+                                    <label for="contact_first_name">Nombre:</label>
+                                    <input type="text" id="contact_first_name" name="contact_first_name" placeholder="Ej.: José" autocomplete="off">
+                                </div>
+                                <div class="input_container">
+                                    <label for="contact_last_name">Apellido:</label>
+                                    <input type="text" id="contact_last_name" name="contact_last_name" placeholder="Ej.: Perez" autocomplete="off">
+                                </div>
+                                <div class="input_container">
+                                    <label for="contact_email">Correo electrónico:</label>
+                                    <input type="email" id="contact_email" name="contact_email" placeholder="Ej.: jose.perez@gmail.com" autocomplete="off">
+                                </div>
+                                <div class="input_container">
+                                    <label for="contact_role">Describa su rol:</label>
+                                    <select id="contact_role" name="contact_role" title="Rol" class="simple-select">
+                                        <option value=""></option>
+                                        <option value="1">Aprendiz de cocinero</option>
+                                        <option value="2">Ayudante de cocina</option>
+                                        <option value="3">Hobbista</option>
+                                        <option value="4">Solter@ desesperd@</option>
+                                        <option value="5">Pasaba por aquí</option>
+                                        <option value="6">Solo intento perfeccionarme</option>
+                                    </select>
+                                </div>
+                                <div class="input_container">
+                                    <label for="contact_motive">Motivo:</label>
+                                    <div class="checkbox_container">
+                                        <label class="form-control">
+                                            <input type="checkbox" id="contact_motive_1" name="contact_motive_1" class="fancy-checkbox">
+                                            Me mudé sol@ y no entiendo mucho.
+                                        </label>
+                                        <label class="form-control">
+                                            <input type="checkbox" id="contact_motive_2" name="contact_motive_2" class="fancy-checkbox" checked>
+                                            Me gusta aparentar que cocino bien.
+                                        </label>
+                                        <label class="form-control form-control--disabled">
+                                            <input type="checkbox" id="contact_motive_3" name="contact_motive_3" class="fancy-checkbox" disabled>
+                                            Mi pareja está por abandonarme.
+                                        </label>
+                                        <label class="form-control form-control--disabled">
+                                            <input type="checkbox" id="contact_motive_4" name="contact_motive_4" class="fancy-checkbox" checked disabled>
+                                            Esta noche me presentan a mi suegr@.
+                                        </label>
+                                    </div>
+                                    <div class="input_container">
+                                        <label for="contact_country">País</label>
+                                        <select id="contact_country" name="contact_country" data-placeholder="Locación">
+                                            <option value="ar" data-img="./static/img/flags/argentina-flag-xs.png">Argentina</option>
+                                            <option value="uy" data-img="./static/img/flags/uruguay-flag-xs.png">Uruguay</option>
+                                            <option value="br" data-img="./static/img/flags/brazil-flag-xs.png">Brasil</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="input_container">
+                                    <label for="contact_cause">Consulta:</label>
+                                    <div class="grow-wrap">
+                                        <textarea id="contact_cause" name="contact_cause" oninput="this.parentNode.dataset.replicatedValue = this.value" placeholder="Describa el motivo de su consulta..."></textarea>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn_form" id="btn_contact">Enviar</button>
+                            </form>
+                        </div>
+                        </form>
+                    </div>
+                </section>
+                 <!-- Top -->
+                <button onclick="to_top();" id="to-top" title="↑">
+                    <i class='bx bxs-up-arrow-square'></i>
+                </button>
+            </div>
+        </main>
+        <footer>
+            <div class="row primary">
+                <div class="column about">
+                    <h3>Los Salieris del Gato</h3>
+                    <p>
+                        Voluptua dolore feugiat eleifend lorem minim erat nisl te takimata dolor eos sed consetetur sit sed sanctus eos autem. Takimata ipsum dolore dolore elitr dolores erat diam nostrud dolor consequat justo nulla sea lorem kasd. Sanctus takimata dolores ut stet duis.
+                    </p>
+                    <div class="social">
+                        <i class='bx bxl-facebook-square'></i>
+                        <i class='bx bxl-instagram-alt'></i>
+                        <i class='bx bxl-twitter'></i>
+                        <i class='bx bxl-youtube'></i>
+                        <i class='bx bxl-whatsapp'></i>
+                    </div>
+                </div>
+                <div class="column links">
+                    <h3>Recursos</h3>
+                    <ul>
+                        <li><a href="#">Descargas</a></li>
+                        <li><a href="#">Cocina Vegana</a></li>
+                        <li><a href="#">Guía de inicio</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="column links">
+                    <h3>Servicios</h3>
+                    <ul>
+                        <li><a href="#">Delivery</a></li>
+                        <li><a href="#">Nutrición</a></li>
+                        <li><a href="#">Envíos</a></li>
+                        <li><a href="#">Cursos</a></li>
+                    </ul>
+                </div>
+                <div class="column subscribe">
+                    <h3>Newsletter</h3>
+                    <div>
+                        <input type="email" id="newsletter_email" name="newsletter_email" placeholder="Ingrese su correo electrónico..." autocomplete="off">
+                        <button onclick="suscribe_newsletter();">Subscribirse</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row copyright">
+                <div class="footer-menu">
+                    <a href="javascript:void(0);" onclick="to_top();" class='no-link'>Inicio</a>
+                    <a href="#anchor_about">Nosotros</a>
+                    <a href="#anchor_contact">Contacto</a>
+                    <a href="#" class='no-link'>Blog</a>
+                    <a href="#" class='no-link'>Social</a>
+                </div>
+                <p>Copyright &copy; 2024 Los Salieris del Gato</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

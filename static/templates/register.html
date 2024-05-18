@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/register.css">
+    <title>Los Salieris del Gato - Registro</title>
+</head>
+<body>
+    <div class="container">
+      <h2 >Completar los datos</h2>
+      <div class="formulario-container">
+        <form action="#" method="POST">
+            <div class="input-container">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+        
+            <div class="input-container">
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" required>
+            </div>
+        
+            <div class="input-container">
+                <label for="email">e-mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-container">
+                <label for="confirm-email">e-mail (repetir):</label>
+                <input type="email" id="confirm-email" name="confirm-email" required>
+            </div>
+            <div>
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <label for="confirm-password">Contraseña (repetir):</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+            <div>
+                <label for="aceptar-terminos">Acepto los términos y condiciones</label>
+                <input type="checkbox" id="aceptar-terminos" name="aceptar-terminos" required>
+            </div>
+          <!-- <button type="submit" class="btn-crear-cuenta" id="font-title">Crear Cuenta</button> -->
+        </form>        
+      </div>
+      <form action="#" method="POST">
+        <button type="submit" class="btn-crear-cuenta" id="font-title">Crear Cuenta</button>
+      </form>
+    </div>
+  </body>
+  </html>
