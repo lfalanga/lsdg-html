@@ -19,7 +19,14 @@
     <link href="./static/styles/alertify.min.css" rel="stylesheet" type="text/css">
     <link href="./static/styles/default.min.css" rel="stylesheet" type="text/css">
     <link href="./static/styles/dynamic-select.css" rel="stylesheet" type="text/css">
-    <link href="./static/styles/main.css" rel="stylesheet" type="text/css">
+    <!-- Served to all users -->
+    <link href="./static/styles/all.css" media="all" rel="stylesheet" type="text/css">
+    <!-- Served to screens that are at least 480px wide -->
+    <link href="./static/styles/smartphone.css" media="(min-width: 480px)" rel="stylesheet" type="text/css">
+    <!-- Served to screens that are at least 801px wide -->
+    <link href="./static/styles/tablet.css" media="(min-width: 801px)" rel="stylesheet" type="text/css">
+    <!-- Served to screens that are at least 1025px wide -->
+    <link href="./static/styles/main.css" media="(min-width: 1025px)" rel="stylesheet" type="text/css">
 
     <!-- ES6 -->
     <script src="./static/js/slidr.min.js" type="text/javascript"></script>
@@ -57,6 +64,20 @@
                     <span class="links_name">Usuario</span>
                 </a>
                 <span class="tooltip">Usuario</span>
+            </li>
+            <li>
+                <a href="#anchor_login">
+                    <i class='bx bxs-log-in'></i>
+                    <span class="links_name">Ingresar</span>
+                </a>
+                <span class="tooltip">Ingresar</span>
+            </li>
+            <li>
+                <a href="#anchor_register">
+                    <i class='bx bx-up-arrow-circle'></i>
+                    <span class="links_name">Registrarse</span>
+                </a>
+                <span class="tooltip">Registrarse</span>
             </li>
             <li>
                 <a href="#anchor_recipes_favourites">
@@ -507,7 +528,7 @@
                     <h3>Recursos</h3>
                     <ul>
                         <li><a href="#">Descargas</a></li>
-                        <li><a href="#">Cocina Vegana</a></li>
+                        <li><a href="#">Veganos</a></li>
                         <li><a href="#">Guía de inicio</a></li>
                         <li><a href="#">Blog</a></li>
                     </ul>

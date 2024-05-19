@@ -540,7 +540,7 @@ input:-internal-autofill-selected {
 .header_title::after {
     font-family: "Poppins", sans-serif;
     font-size: 0.5em;
-    content: "main.css";
+    content: "all.css";
 }
 
 .header_content i {
@@ -940,7 +940,6 @@ footer li:not(:first-child) {
 footer ul li a {
     color: white;
     text-decoration: none;
-    font-size: 0.9em;
 }
 
 footer ul li a:hover {
@@ -997,6 +996,7 @@ div.social {
 .footer-menu a {
     color: white;
     padding: 6px;
+
     text-decoration: none;
 }
 

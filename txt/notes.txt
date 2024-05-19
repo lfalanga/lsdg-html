@@ -1,23 +1,11 @@
-*** ENLACES *********
-
-    https://apolo.dreamhosters.com/
-
-    https://boxicons.com/
-    https://www.youtube.com/watch?v=pfaSUYaSgRo&list=WL&index=630&t=33s
-    https://www.youtube.com/watch?v=UpkEANWC2Ms&list=WL&index=684&t=127s
-
-    https://www.youtube.com/watch?v=wEfaoAa99XY&list=WL&index=775
-    https://youtu.be/uy1tgKOnPB0?si=S6qT80hs82c6A1BJ
-    https://github.com/soyerno/pyhoot
-
-    https://ourcodeworld.com/articles/read/544/top-5-best-framework-agnostic-javascript-slider-libraries#:~:text=Top%205%3A%20Best%20Framework%20Agnostic%20JavaScript%20Slider%20Libraries,Github%20...%205%205.%20Tiny%20Slider%20Github%20
-    http://www.bchanx.com/slidr
-    https://www.countryflags.com/brazil-flag-image/
-    https://codeshack.io/dynamic-select-images-html-javascript/#full-source-code
-    https://dmitripavlutin.com/6-ways-to-declare-javascript-functions/
-
 *** PENDIENTES *********
 
+    .- Por alguna razón se rompió el z-index de los tooltops con el menú colapsado.
+    .- Cuando se abre en laptop, desplegar el menú por defecto.
+    .- Agregar al menu colapsado las opciones de registrarse y loguearse.
+    .- Tooltips para las opciones del menu del header.
+    .- Cambiar el color del onhover del menú desplegado a una de las variables.
+    .- Validaciones: onexit cambiar los estilos y spans con la descripción del error.
     .- Receta HTML.
     .- User profile HTML.
     .- Settings HTML.
@@ -25,28 +13,18 @@
     .- Shoping list HTML.
     .- Errores HTML.
     .- Mensajes HTML.
-    .- Validaciones forms y mensajes de error.
-    .- Validaciones. onexit cambiar los estilos.
-
-    .- Corregir los pixeles al redireccionar a los forms.
+    .- Validación regex email Login, Register y Newsletter.
     .- Reset forms.
     .- Register form traucir al español el ok cancel del dialogo de confirmación.
-    .- Validación regex email Login, Register y Newsletter.
     .- Tipificar el campo password y usar un regex.
-    .- Al hacer sticky el header mover hacia abajo el div home_content así se ve bien la barra de scroll.
-    .- Page loader como el Top
+    .- Page loader como el Top.
+    .- Sacar la variable global country y encontrar otra forma de validación más prolija.
     .- Bajar todas las librerias y CSS al proyecto local. Segunda entrega por boxicons.
-    .- Variables para los colores y, tal vez, tamaños del menú.
+    .- Variables para los colores y, tal vez, tamaños del menú. Black  White!!!
     .- Comprimir archivos para la entrega final. Source code legible en GIT.
     .- En lugar de usar font-weight, probar los distintos tipos de fuentes de Google Fonts.
     .- Hacer el sitio múlti-lenguajes.
-    
-    .- Sacar la variable global country y encontrar otra forma de validación más prolija.
 
-    .- Favicon
-    .- Checkbox a la izquierda del label
-    .- Pagina de recetas
-    .- Animaciones botones del menu al estar colapsado
     .- Ver si conviene desplegar tooltip con el menu colapsado
     .- Spans de validaciones JS
     .- Sacar validaciones HTML y hacer todo por JS y backend
@@ -75,6 +53,26 @@
             https://dev.to/devsmitra/28-javascript-array-hacks-a-cheat-sheet-for-developer-5769
     .- Implementar la etiqueta fieldset.
 
+
+***
+
+*** ENLACES *********
+
+    https://apolo.dreamhosters.com/
+
+    https://boxicons.com/
+    https://www.youtube.com/watch?v=pfaSUYaSgRo&list=WL&index=630&t=33s
+    https://www.youtube.com/watch?v=UpkEANWC2Ms&list=WL&index=684&t=127s
+
+    https://www.youtube.com/watch?v=wEfaoAa99XY&list=WL&index=775
+    https://youtu.be/uy1tgKOnPB0?si=S6qT80hs82c6A1BJ
+    https://github.com/soyerno/pyhoot
+
+    https://ourcodeworld.com/articles/read/544/top-5-best-framework-agnostic-javascript-slider-libraries#:~:text=Top%205%3A%20Best%20Framework%20Agnostic%20JavaScript%20Slider%20Libraries,Github%20...%205%205.%20Tiny%20Slider%20Github%20
+    http://www.bchanx.com/slidr
+    https://www.countryflags.com/brazil-flag-image/
+    https://codeshack.io/dynamic-select-images-html-javascript/#full-source-code
+    https://dmitripavlutin.com/6-ways-to-declare-javascript-functions/
 
 ***
 

@@ -4,16 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // ### JS Performance ###########################
   const start_time = performance.now();
-
   let home_container = document.getElementById('home_content');
-
-  // ### Sticky Header ###########################
-  /* 
-  home_container.addEventListener("scroll", (event) => {
-    sticky_header(event.target.scrollTop);
-  });
-  */
-
 
   // ### Hide/Show Top button ###########################
   home_container.addEventListener("scroll", (event) => {
@@ -40,8 +31,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // ### Slidr ###########################
   let s_all = slidr.create('slidr_recipes_all_img', {
+      after: function(e) { console.log('in: ' + e.in.slidr); },
       breadcrumbs: true,
-      overflow: true
+      overflow: true,
+      opacity: 0.3
     }).add('h', ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'zero']).start();
   
   let s_15min = slidr.create('slidr_recipes_15min_img', {

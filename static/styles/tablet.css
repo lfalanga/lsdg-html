@@ -185,6 +185,8 @@ select:-webkit-autofill:focus {
     background: var(--primary-color);
     padding: 6px 14px;
     transition: all 0.1s ease;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .sidebar.active {
@@ -238,6 +240,7 @@ select:-webkit-autofill:focus {
 
 .sidebar ul {
     margin-top: 20px;
+    margin-bottom: 65px;
 }
 
 .sidebar ul li {
@@ -277,6 +280,7 @@ select:-webkit-autofill:focus {
     opacity: 0;
     pointer-events: none;
     display: block;
+    z-index: 50;
 }
 
 .sidebar.active ul li .tooltip {
@@ -365,11 +369,15 @@ input:-internal-autofill-selected {
 /* ### Profile ########################### */
 
 .sidebar .profile_content {
-    position: absolute;
+    position: fixed;
     color: #fff;
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: 78px;
+}
+
+.sidebar.active .profile_content {
+    width: 240px;
 }
 
 .sidebar .profile_content .profile {
@@ -540,7 +548,7 @@ input:-internal-autofill-selected {
 .header_title::after {
     font-family: "Poppins", sans-serif;
     font-size: 0.5em;
-    content: "main.css";
+    content: "tablet.css";
 }
 
 .header_content i {
