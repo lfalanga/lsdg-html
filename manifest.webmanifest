@@ -1,0 +1,4 @@
+{
+  "display_override": ["fullscreen", "minimal-ui"],
+  "display": "standalone"
+}

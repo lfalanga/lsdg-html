@@ -1,0 +1,60 @@
+
+
+:root {
+    --primary-color: #345fA9;
+    --secondary-color: #339999;
+    --tertiary-color: #993366;
+    --quaternary-color: #993399;
+    --quinary-color: #339966;
+    --form-control-color: #339999;
+    --form-control-disabled: #959495;
+}
+
+html, body {
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+html, body {
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+hr {
+    width: 80%;
+    margin-left: 10%;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid white;
+  -webkit-text-fill-color: black;
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+  transition: background-color 5000s ease-in-out 0s; 
+  font-family: "Poppins", sans-serif;
+} */

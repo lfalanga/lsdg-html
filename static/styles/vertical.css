@@ -1,0 +1,1100 @@
+/* Google Fonts @import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.poppins-thin {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.poppins-extralight {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.poppins-light {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    }
+
+.poppins-medium {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.poppins-semibold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.poppins-bold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.poppins-extrabold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    }
+
+.poppins-black {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.poppins-thin-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+}
+
+.poppins-extralight-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: italic;
+}
+
+.poppins-light-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.poppins-regular-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.poppins-medium-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.poppins-semibold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.poppins-bold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.poppins-extrabold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: italic;
+}
+
+.poppins-black-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+}
+
+:root {
+    --primary-color: #345fA9;
+    --secondary-color: #339999;
+    --tertiary-color: #993366;
+    --quaternary-color: #993399;
+    --quinary-color: #339966;
+    --form-control-color: #339999;
+    --form-control-disabled: #959495;
+}
+  
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+html, body {
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+hr {
+    width: 80%;
+    margin-left: 10%;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+/* ### Change Autocomplete styles in Chrome #########*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid white;
+  -webkit-text-fill-color: black;
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+  transition: background-color 5000s ease-in-out 0s; 
+  font-family: "Poppins", sans-serif;
+}
+
+
+
+/* ### Main ########################### */
+
+.content_main {
+    background: #fff;
+    z-index: -1;
+}
+
+/* ### Sidebar ########################### */
+
+.sidebar  {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 78px;
+    z-index: 60;
+    background: var(--primary-color);
+    transition: all 0.1s ease;
+}
+
+.sidebar.active {
+    margin: 0;
+    width: 240px;
+}
+
+.sidebar .nav-list {
+    width: 50px;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-inline-start: 0;
+}
+
+.sidebar-options {
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    margin-top: 10px;
+}
+
+.sidebar.active .sidebar-options {
+    display: flex;
+    justify-content: left;
+}
+
+.sidebar-options::-webkit-scrollbar {
+    width: 0px;
+}
+
+.sidebar .sidebar-logo-content {
+    display: flex;
+}
+
+.sidebar.active .sidebar-logo-content {
+    display: flex;
+    flex-direction: row;
+}
+
+.sidebar .sidebar-logo-content .logo {
+    color: #fff;
+    display: none;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.1 ease;
+}
+
+.sidebar.active .sidebar-logo-content .logo {
+    display: flex;
+    opacity: 1;
+    pointer-events: none;
+}
+
+.sidebar-logo-content .logo i {
+    margin-left: 15px;
+    margin-right: 10px;
+    font-size: 28px;
+}
+
+.sidebar-logo-content .logo .logo_name {
+    font-family: "Lobster", sans-serif;
+    font-size: 19px;
+    font-weight: 400;
+}
+
+.sidebar #btn_menu {
+    color: #fff;
+    font-size: 25px;
+    cursor: pointer;
+    line-height: 50px;
+    width: 100%;
+    text-align: center;
+}
+
+.sidebar.active #btn_menu {
+    color: #fff;
+    font-size: 25px;
+    cursor: pointer;
+    line-height: 50px;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+
+.sidebar-options .nav-list li {
+    position: relative;
+    width: 50px;
+    height: 30px;
+    /* list-style: none; */
+}
+
+/* .nomarker::marker {
+    display: block;
+} */
+
+.sidebar .links_name {
+    opacity: 0;
+    pointer-events: none;
+    display: none;
+}
+
+.sidebar.active .links_name {
+    opacity: 1;
+    pointer-events: auto;
+    transition: all 0.5 ease;
+    display: list-item;
+}
+
+.sidebar-options .nav-list li input {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 12px;
+    outline: none;
+    border: none;
+    background: var(--primary-color);
+    padding-left: 55px;
+    font-size: 11px;
+    color: white;
+}
+
+.sidebar-options.active .nav-list li input {
+    background: white;
+    color: black;
+}
+
+input:-internal-autofill-selected {
+    background: white;
+}
+
+.sidebar-options .nav-list li input::placeholder {
+    color: white;
+}
+
+.sidebar-options .nav-list li .bxs-search-alt-2 {
+    position: absolute;
+    z-index: 9;
+    color: white;
+    font-size: 25px;
+    height: 100%;
+    padding-top: 3px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.sidebar-options.active .nav-list li .bxs-search-alt-2 {
+    background: white;
+    color: black;
+}
+
+.sidebar-options .nav-list li .bxs-search-alt-2:hover {
+    background: #fff;
+    color: #1d1b31;
+}
+
+.sidebar-options .nav-list li a {
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-radius: 12px;
+    white-space: nowrap;
+}
+
+.sidebar-options .nav-list li i {
+    height: 25px;
+    min-width: 50px;
+    border-radius: 12px;
+    line-height: 25px;
+    text-align: center;
+    font-size: 25px;
+}
+
+.sidebar-options .nav-list li a:hover {
+    color: #11101d;
+    background: #fff;
+}
+
+/* .menu-position-1 {
+    display: none;
+}
+
+.menu-position-2 {
+    display: none;
+} */
+
+.menu-positioner-down {
+    order: 6;
+}
+
+.menu-positioner-up {
+    display: none;
+}
+
+/* ### Tooltips ######### */
+
+.sidebar-options ul li .tooltip {
+    position: absolute;
+    left: 115px;
+    top: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 6px;
+    height: 30px;
+    width: 122px;
+    background: #000;
+    color: #fff;
+    line-height: 30px;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: 0s;
+    opacity: 0;
+    pointer-events: none;
+    display: none;
+}
+
+.sidebar.active .sidebar-options ul li .tooltip {
+    display: none;
+}
+
+.sidebar-options ul li:hover .tooltip {
+    transition: all 0.5s ease;
+    opacity: 1;
+    top: 50%;
+    display: block;
+}
+
+/* ### Profile ########################### */
+
+.sidebar .profile_content {
+    position: relative;
+    width: 78px;
+    height: 50px;
+    margin-bottom: 15px;
+    left: 0;
+    color:#fff;
+}
+
+.sidebar.active .profile_content {
+    width: 240px;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.sidebar .profile_content .profile {
+    width: 78px;
+    height: 50px;
+    background: none;
+    transition: all 0.5s ease;
+}
+
+.sidebar.active .profile_content .profile {
+    width: 240px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: var(--quinary-color);
+    transition: all 0.5s ease;
+}
+
+.profile_content .profile .profile_details {
+    display: none;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+
+}
+
+.sidebar.active .profile .profile_details {
+    display: flex;
+    align-items: center;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.sidebar.active .profile .bxs-log-out {
+    bottom: 0;
+    top: 0;
+    background: none;
+}
+
+.profile .profile_details img {
+    height: 45px;
+    width: 45px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.profile .profile_details .name_suscription {
+    margin-left: 13px;
+}
+
+.profile .profile_details .name {
+    font-size: 12px;
+    font-weight: 400px;
+}
+
+.profile .profile_details .suscription {
+    font-size: 9px;
+    font-weight: 400px;
+}
+
+.sidebar .profile a {
+    color: white;
+    width: 50px;
+    height: 50px;
+}
+
+.sidebar.active .profile a {
+    position: relative;
+    color: white;
+    width: 50px;
+    height: 50px;
+}
+
+.profile .bxs-log-out {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 50px;
+    line-height: 50px;
+    font-size: 25px;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    background: var(--quinary-color);
+}
+
+.home_content {
+    position: fixed;
+    top: 100px;
+    height: 100%;
+    left: 78px;
+    width: calc(100% - 78px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.home_content::-webkit-scrollbar {
+    width: 5px;
+}
+
+.home_content::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background-color: white;
+    border: none;
+    box-shadow: none;
+}
+
+.home_content::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: var(--secondary-color);
+}
+
+.sidebar ~ .home_content {
+    width: calc(100% - 78px);
+    left: 78px;
+    top: 100px;
+}
+
+.sidebar.active ~ .home_content {
+    width: calc(100% - 240px);
+    left: 240px;
+    top: 100px;
+}
+
+/* ### Header ########################### */
+
+.header_content {
+    position: fixed;
+    top: 0;
+    display: flex;
+    background: var(--primary-color);
+    padding: 15px;
+    height: 130px;
+    z-index: 40;
+    width: calc(100% - 78px);
+}
+
+.header_content.active {
+    width: calc(100% - 240px);
+}
+
+.header_logo {
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    line-height: 100px;
+    padding-top: -30px;
+    padding-left: 10px;
+    margin-top: 0px;
+    margin-left: 10px;
+    border: 2px solid white;
+    border-radius: 50%;
+    background: var(--primary-color);
+    z-index: 45;
+}
+
+.header_logo_img_container {
+    position: absolute;
+    top: -10px;
+    left: 7px;
+}
+
+.header_logo img {
+    width: 125px;
+    height: 125px;
+    z-index: 45;
+}
+
+.header_title {
+    margin-left: 170px;
+    min-width: 300px;
+    height: 130px;
+    place-content: center;
+    padding-bottom: 25px;
+    font-family: "Lobster", sans-serif;
+    font-size: 38px;
+    color: white;
+}
+
+.header_title::after {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.5em;
+    content: "all.css";
+}
+
+.header_content i {
+    color: white;
+    font-size: 25px;
+    height: 100%;
+    place-content: center;
+    text-align: right;
+    cursor: pointer;
+    visibility: visible;
+}
+
+.header_menu {
+    display: flex;
+    flex-direction: row;
+    z-index: 50;
+    width: 100%;
+    justify-content: right;
+    margin-right: 1vw;
+}
+
+#to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 40px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+#to-top i {
+    background-color: white;
+    color: var(--form-control-color);
+    cursor: pointer;
+}
+
+/* ### Forms ########################### */
+
+.form_container {
+    max-width: 500px;
+    margin: 50px auto;
+    background-color: #339966;
+    padding: 10px;
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+  
+  
+.standard_form_container {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 10px;
+}
+
+.form_container h2 {
+    font-family: "Lobster", sans-serif;
+    font-weight: 50;
+    font-style: normal;
+    font-size:2em;
+    margin-bottom: 10px;
+    margin-top: 0;
+    text-align: center;
+    color: #fff;
+}
+
+#font_title {
+    font-family: "Lobster", sans-serif;
+    font-weight: 50;
+    font-style: normal;
+    font-size:2em;
+}
+
+form label,
+form span {
+    display:flex;
+    margin-bottom: 5px;
+    color: #339966;
+}
+
+/* ### Inputs ########################### */
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+    font-size: 1em;
+    width: 100%;
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid #339966;
+    box-sizing: border-box;
+    outline: 0px;
+}
+
+/* ### TextArea Autoresize ########################### */
+
+textarea {
+    font-size: 1em;
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #339966;
+    outline: none;
+    resize: none;
+}
+
+.grow-wrap {
+    /* easy way to plop the elements on top of each other and have them both sized based on the tallest one's height */
+    display: grid;
+}
+
+.grow-wrap::after {
+    /* Note the weird space! Needed to preventy jumpy behavior */
+    content: attr(data-replicated-value) " ";
+    /* This is how textarea text behaves */
+    white-space: pre-wrap;
+    /* Hidden from view, clicks, and screen readers */
+    visibility: hidden;
+}
+
+.grow-wrap > textarea {
+    /* You could leave this, but after a user resizes, then it ruins the auto sizing */
+    resize: none;
+    /* Firefox shows scrollbar on growth, you can hide like this. */
+    overflow: hidden;
+}
+
+.grow-wrap > textarea, .grow-wrap::after {
+    /* Identical styling required!! */
+    border: 1px solid #339966;
+    padding: 0.5rem;
+    font: inherit;
+    /* Place on top of each other */
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+input::placeholder,
+textarea::placeholder {
+    opacity: 0.4;
+}
+
+/* ### Fancy Checkbox ########################### */
+
+.checkbox_container {
+    padding: 10px 0;
+}
+
+.form-control {
+    font-size: 1rem;
+    line-height: 1.1;
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: 0.5em;
+}
+  
+.form-control + .form-control {
+    margin-top: 1em;
+}
+  
+.form-control--disabled {
+    color: var(--form-control-disabled);
+    cursor: not-allowed;
+}
+  
+input[type="checkbox"].fancy-checkbox {
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    /* Remove most all native input styles */
+    appearance: none;
+    /* For iOS < 15 */
+    background-color: white;
+    /* Not removed via appearance */
+    margin: 0;
+
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.1em solid currentColor;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+
+    display: grid;
+    place-content: center;
+}
+  
+input[type="checkbox"].fancy-checkbox::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    transform: scale(0);
+    transform-origin: bottom left;
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--form-control-color);
+    /* Windows High Contrast Mode */
+    background-color: CanvasText;
+}
+
+input[type="checkbox"].fancy-checkbox:checked::before {
+    transform: scale(1);
+}
+
+input[type="checkbox"].fancy-checkbox:focus {
+    outline: max(1px, 0.1em) solid grey;
+    outline-offset: max(2px, 0.15em);
+}
+
+input[type="checkbox"].fancy-checkbox:disabled {
+    --form-control-color: var(--form-control-disabled);
+
+    color: var(--form-control-disabled);
+    cursor: not-allowed;
+}
+
+select.simple-select {
+    width: 100%;
+    outline: none;
+    border: 0;
+    border-bottom: 1px solid #339966;
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+/* ### Form's Buttons  ########################### */
+
+.btn_form {
+    font-family: "Lobster", sans-serif;
+    font-size:1.5em;
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    padding: 5px 0;
+    background: var(--secondary-color);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn_form:hover {
+    background: black;
+}
+
+/* ########################### */
+
+.welcome_container,
+.about_container, 
+.recipes_all_container,
+.recipes_15min_container,
+.recipes_30min_container,
+.recipes_1hr_container,
+.recipes_popular_container,
+.recipes_favourites {
+    max-width: 500px;
+    margin: 50px auto;
+    text-align: justify;
+
+    a {
+        text-decoration: none;
+        color: var(--primary-color);
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+
+    h2 {
+        font-family: "Lobster", sans-serif;
+        text-align: center;
+        font-size: 2em;
+        padding: 20px 0;
+        color: var(--primary-color);
+    }
+}
+
+/* ### Slidr ########################### */
+
+.slidr_recipes_all_img,
+.slidr_recipes_15min_img,
+.slidr_recipes_30min_img,
+.slidr_recipes_1hr_img,
+.slidr_recipes_popular_img,
+.slidr_recipes_favourites_img {
+    display: inline-block;
+}
+
+.slidr_recipes_all_container,
+.slidr_recipes_15min_container,
+.slidr_recipes_30min_container,
+.slidr_recipes_1hr_container,
+.slidr_recipes_popular_container,
+.slidr_recipes_favourites_container {
+    width: 330px;
+    height: 330px;
+    margin: auto;
+
+    div {
+
+        div {
+            width: 330px;
+            height: 330px;
+            text-align: center;
+            place-content: center;
+            font-family: "Lobster", sans-serif;
+            font-size: 2rem;
+        }
+
+        img {
+            width: 330px;
+            height: 330px;
+            object-fit: cover;
+        }
+    }
+}
+
+/* ### Alertify ########################### */
+
+.ajs-message.ajs-custom { 
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #31708f;
+}
+
+.ajs-button {
+    cursor: pointer;
+}
+
+.ajs-content {
+    text-align: center;
+}
+
+.ajs-search-results {
+    background: rgba(91,189,114,.95) !important;
+    color: #fff !important;
+    text-shadow: -1px -1px 0 rgba(0,0,0,.5);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ### Footer ########################### */
+
+footer {
+    background-color: #121315;
+    color: white;
+    font-size: 16px;
+    margin-bottom: 100px;
+}
+
+footer * {
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+}
+
+.row {
+    padding: 1em 1em;
+}
+
+.row.primary {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 2fr;
+    align-items: stretch;
+}
+
+.column {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 2em;
+    min-height: 10em;
+}
+
+footer h3 {
+    font-family: "Lobster", sans-serif;
+    width: 100%;
+    text-align: left;
+    color: white;
+    font-size: 2em;
+    white-space: nowrap;
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+}
+
+footer li:not(:first-child) {
+    margin-top: 0.8em;
+}
+
+footer ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
+}
+
+.about p {
+    font-size: 0.8em;
+    text-align: justify;
+    line-height: 2;
+    margin: 0;
+}
+
+footer input,
+footer button {
+    font-size: 1em;
+    padding: 1em;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+footer button {
+    cursor: pointer;
+}
+
+footer button {
+    background-color: var(--quaternary-color);
+    color: #ffffff;
+}
+
+div.social {
+    display: flex;
+    justify-content: space-around;
+    font-size: 2.4em;
+    flex-direction: row;
+    margin-top: 0.5em;
+}
+
+.social i {
+    color: #bac6d9;
+}
+
+.copyright {
+    padding: 0.3em 1em;
+    background-color: #25262e;
+}
+
+.footer-menu {
+    float: left;
+    margin-top: 10px;
+}
+
+.footer-menu a {
+    color: white;
+    padding: 6px;
+
+    text-decoration: none;
+}
+
+.footer-menu a:hover {
+    color: var(--secondary-color);
+}
+
+.copyright p {
+    font-size: 0.9em;
+    text-align: right;
+}
+
+@media screen and (max-width: 1000px) {
+    .row.primary {
+        grid-template-columns: 1fr;
+    }
+}
