@@ -177,21 +177,37 @@ select:-webkit-autofill:focus {
 
 .sidebar  {
     position: fixed;
+    /* position: absolute; */
+    z-index: 99999;
+
+    display: flex;
+    flex-direction: column;
     top: 0;
     left: 0;
     height: 100%;
     width: 78px;
-    z-index: 50;
+    /* width: 200px; */
+    z-index: 60;
     background: var(--primary-color);
     padding: 6px 14px;
     transition: all 0.1s ease;
+    justify-content: space-between;
 }
 
 .sidebar.active {
     width: 240px;
 }
 
-.sidebar .logo_content .logo {
+/* .sidebar-options {
+    overflow-y: auto;
+    overflow-x: hidden;
+} */
+
+.sidebar-options::-webkit-scrollbar {
+    width: 0px;
+}
+
+.sidebar .sidebar-logo-content .logo {
     color: #fff;
     display: flex;
     height: 50px;
@@ -202,17 +218,17 @@ select:-webkit-autofill:focus {
     transition: all 0.1 ease;
 }
 
-.sidebar.active .logo_content .logo {
+.sidebar.active .sidebar-logo-content .logo {
     opacity: 1;
     pointer-events: none;
 }
 
-.logo_content .logo i {
+.sidebar-logo-content .logo i {
     font-size: 28px;
     margin-right: 5px;
 }
 
-.logo_content .logo .logo_name {
+.sidebar-logo-content .logo .logo_name {
     font-family: "Lobster", sans-serif;
     font-size: 19px;
     font-weight: 400;
@@ -236,11 +252,7 @@ select:-webkit-autofill:focus {
     left: 90%;
 }
 
-.sidebar ul {
-    margin-top: 20px;
-}
-
-.sidebar ul li {
+.sidebar-options .nav-list li {
     position: relative;
     height: 30px;
     width: 100%;
@@ -249,18 +261,83 @@ select:-webkit-autofill:focus {
     line-height: 30px;
 }
 
-.sidebar .links_name {
-    opacity: 0;
-    pointer-events: none;
+.sidebar-options .nav-list li input {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 12px;
+    outline: none;
+    border: none;
+    background: var(--primary-color);
+    padding-left: 55px;
+    font-size: 11px;
+    color: white;
 }
 
-.sidebar.active .links_name {
-    opacity: 1;
-    pointer-events: auto;
-    transition: all 0.5 ease;
+.sidebar-options.active .nav-list li input {
+    background: white;
+    color: black;
 }
 
-.sidebar ul li .tooltip {
+input:-internal-autofill-selected {
+    background: white;
+}
+
+.sidebar-options .nav-list li input::placeholder {
+    color: white;
+}
+
+.sidebar-options .nav-list li .bxs-search-alt-2 {
+    position: absolute;
+    z-index: 9;
+    color: white;
+    font-size: 25px;
+    height: 100%;
+    padding-top: 3px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.sidebar-options.active .nav-list li .bxs-search-alt-2 {
+    background: white;
+    color: black;
+}
+
+.sidebar-options .nav-list li .bxs-search-alt-2:hover {
+    background: #fff;
+    color: #1d1b31;
+}
+
+.sidebar-options .nav-list li a {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-radius: 12px;
+    white-space: nowrap;
+    /* z-index: 9999; */
+}
+
+.sidebar-options .nav-list li i {
+    height: 25px;
+    min-width: 50px;
+    border-radius: 12px;
+    line-height: 25px;
+    text-align: center;
+    font-size: 25px;
+}
+
+.sidebar-options .nav-list li a:hover {
+    color: #11101d;
+    background: #fff;
+}
+
+/* ### Tooltips ######### */
+
+.sidebar-options ul li .tooltip {
     position: absolute;
     left: 115px;
     top: 0;
@@ -279,87 +356,14 @@ select:-webkit-autofill:focus {
     display: block;
 }
 
-.sidebar.active ul li .tooltip {
+.sidebar.active .sidebar-options ul li .tooltip {
     display: none;
 }
 
-.sidebar ul li:hover .tooltip {
+.sidebar-options ul li:hover .tooltip {
     transition: all 0.5s ease;
     opacity: 1;
     top: 50%;
-}
-
-.sidebar ul li input {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    top: 0;
-    border-radius: 12px;
-    outline: none;
-    border: none;
-    background: var(--primary-color);
-    padding-left: 55px;
-    font-size: 11px;
-    color: white;
-}
-
-.sidebar.active ul li input {
-    background: white;
-    color: black;
-}
-
-input:-internal-autofill-selected {
-    background: white;
-}
-
-.sidebar ul li input::placeholder {
-    color: white;
-}
-
-.sidebar ul li .bxs-search-alt-2 {
-    position: absolute;
-    z-index: 9;
-    color: white;
-    font-size: 25px;
-    height: 100%;
-    padding-top: 3px;
-    cursor: pointer;
-    transition: all 0.5s ease;
-}
-
-.sidebar.active ul li .bxs-search-alt-2 {
-    background: white;
-    color: black;
-}
-
-.sidebar ul li .bxs-search-alt-2:hover {
-    background: #fff;
-    color: #1d1b31;
-}
-
-.sidebar ul li a {
-    color: #fff;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    border-radius: 12px;
-    white-space: nowrap;
-}
-
-.sidebar ul li a:hover {
-    color: #11101d;
-    background: #fff;
-}
-
-.sidebar ul li i {
-    height: 25px;
-    min-width: 50px;
-    border-radius: 12px;
-    line-height: 25px;
-    text-align: center;
-    font-size: 25px;
 }
 
 /* ### Profile ########################### */
@@ -540,7 +544,7 @@ input:-internal-autofill-selected {
 .header_title::after {
     font-family: "Poppins", sans-serif;
     font-size: 0.5em;
-    content: "main.css";
+    content: "smartphone.css";
 }
 
 .header_content i {
@@ -940,7 +944,6 @@ footer li:not(:first-child) {
 footer ul li a {
     color: white;
     text-decoration: none;
-    font-size: 0.9em;
 }
 
 footer ul li a:hover {
@@ -997,6 +1000,7 @@ div.social {
 .footer-menu a {
     color: white;
     padding: 6px;
+
     text-decoration: none;
 }
 

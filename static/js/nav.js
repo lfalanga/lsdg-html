@@ -5,10 +5,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
     let sidebar             = document.querySelector("#sidebar_container");
     let header              = document.querySelector("#header_content");
+    let header_menu         = document.querySelector("#header_menu");
     let btn_menu            = document.querySelector("#btn_menu");
     let btn_header_menu     = document.querySelector("#btn_header_menu");
     let btn_search          = document.querySelector("#btn_search");
     let input_search        = document.querySelector("#search");
+    const width             = window.screen.width * window.devicePixelRatio;
+    const height            = window.screen.height * window.devicePixelRatio;
+
+    console.log("screen size:", width + "x" + height);
 
     // ### Removing onhover display text behaviour #########
     const html_a_elements   = document.getElementsByClassName("no-link");
@@ -25,12 +30,14 @@ document.addEventListener("DOMContentLoaded", function() {
     btn_menu.onclick = function() {
         sidebar.classList.toggle("active");
         header.classList.toggle("active");
+        header_menu.classList.toggle("active");
     }
 
     // ### Expand menu button (header) ###########################
     btn_header_menu.onclick = function() {
         sidebar.classList.toggle("active");
         header.classList.toggle("active");
+        header_menu.classList.toggle("active");
     }
 
     // ### Search button ###########################
@@ -57,7 +64,6 @@ const search_handle_keypress = function(e) {
   }
 
 const search = function() {
-    
     let sidebar     = document.querySelector("#sidebar_container");
     let query       = null;
 
@@ -88,7 +94,6 @@ const search_results = function(evt, query) {
             });
         });
     }
-
 }
 
 const profile = function() {
@@ -135,3 +140,77 @@ const logout = function() {
         alertify.success(message);
     });
 }
+
+const menu_down = function() {
+    
+    // ### Last menu_position #########
+    if (menu_position === 3) {
+        return false;
+    }
+
+    // ### menu_position == 0 #########
+    let html_i_elements   = document.getElementsByClassName('menu-position-' + menu_position);
+    let arr_i = Array.prototype.filter.call(
+        html_i_elements,
+        (element) => element.nodeName === "LI",
+    );
+    arr_i.forEach((li) => {
+        li.setAttribute('style', 'display:none !important');
+    });
+  
+    // ### menu_position > 0 #########
+    menu_position++;
+    html_i_elements   = document.getElementsByClassName('menu-position-' + menu_position);
+    arr_i = Array.prototype.filter.call(
+        html_i_elements,
+        (element) => element.nodeName === "LI",
+    );
+    arr_i.forEach((li) => {
+        li.setAttribute('style', 'display:flex !important; justify-content: space-around;');
+    });
+    const menu_positioner_up = document.querySelector('.menu-positioner-up');
+    menu_positioner_up.setAttribute('style', 'display:flex !important; justify-content: space-around;');
+
+    if (menu_position >= 3) {
+        const menu_positioner_down = document.querySelector('.menu-positioner-down');
+        menu_positioner_down.setAttribute('style', 'display:none !important');
+    }
+
+    return false;
+  }
+  
+  const menu_up = function() {
+    
+    // ### menu_position == 0 #########
+    let html_i_elements   = document.getElementsByClassName('menu-position-' + menu_position);
+    let arr_i = Array.prototype.filter.call(
+        html_i_elements,
+        (element) => element.nodeName === "LI",
+    );
+    arr_i.forEach((li) => {
+        li.setAttribute('style', 'display:none !important');
+    });
+  
+    // ### menu_position > 0 #########
+    menu_position--;
+    html_i_elements   = document.getElementsByClassName('menu-position-' + menu_position);
+    arr_i = Array.prototype.filter.call(
+        html_i_elements,
+        (element) => element.nodeName === "LI",
+    );
+    arr_i.forEach((li) => {
+        li.setAttribute('style', 'display:flex !important; justify-content: space-around;');
+    });
+
+    if (menu_position === 0) {
+        const menu_positioner_up = document.querySelector('.menu-positioner-up');
+        menu_positioner_up.setAttribute('style', 'display:none !important');
+    }
+
+    if (menu_position < 3) {
+        const menu_positioner_down = document.querySelector('.menu-positioner-down');
+        menu_positioner_down.setAttribute('style', 'display:flex !important; justify-content: space-around;');
+    }
+  
+    return false;
+  }

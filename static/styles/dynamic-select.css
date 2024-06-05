@@ -4,6 +4,7 @@
     flex-direction: column;
     position: relative;
     width: 100%;
+    -webkit-user-select: none;
     user-select: none;
 }
 

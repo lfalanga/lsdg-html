@@ -1,4 +1,5 @@
 var country = 'ar';
+var menu_position = 0;
 
 document.addEventListener("DOMContentLoaded", function() {
 
